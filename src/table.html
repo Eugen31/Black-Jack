@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Jack</title>
+    <link rel="stylesheet" href="./table.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="stylesheet">
+
+<body onload="showPlayerInfo(), disableMultiBtn()">
+
+    <div class="container" >
+
+        <!-- navigation -->
+        <nav class="nav__bar flex__center__row">
+
+            <div class="home__page">
+                <!-- go home page -->
+                <a  onclick="return confirm('You are sure want to leave page current game progress will be lost?');" href="./index.html"><img src='./assets/home.png' alt="home page" width="40px"/></a>
+            </div>
+
+            <div class="about__game">
+                <!-- get more info about game -->
+                <a href="https://www.cs.mcgill.ca/~rwest/wikispeedia/wpcd/wp/b/Blackjack.htm" target="_blank"><img src="./assets/info.png" alt="rules" width="40px"/></a>
+            </div>
+                
+        </nav>
+
+        <!-- info -->
+        <div class="header flex__center__row">
+            <!-- info score -->
+            <div class="info__message">
+                <h1>Place a bet, to start the game</h1>
+            </div>
+        </div>
+
+        <!-- player info -->
+        <div onchange="updatePot()" class="player__profile flex_start_col" >
+            <div class="playerBio flex_start_col">
+                <p id="playerName"></p>
+                <p id="playerBalance"></p>
+            </div>
+            <div class="player__balance flex_start_col">
+                <div>
+                    <label for="bet">Bet :</label>
+                    <input class="playerBet" type="number" id="bet" min="0" value="10">
+                </div>
+                <h4>Pot : $ 20</h4>
+            </div>
+
+        </div>
+
+        <!-- table game -->
+        <div class="table flex__center__col">
+            <!-- dealer choice -->
+            <div class="cpu_choice cards__container">
+                <div class="cards flex__center__row dealerCards">
+                </div>
+                <!-- dealears sum -->
+                <h3></h3>
+
+            </div>
+
+            <!-- player choice -->
+            <div class="player_choice cards__container">
+                <div class="cards flex__center__row playerCards">
+                </div>
+                <!-- player sum -->
+                <h3></h3>
+
+
+            </div>
+            
+        </div>
+
+        <!-- buttons -->
+        <div class="game_controls flex__center__row">
+            <button onclick="playAgain()" class=".playAgain__btn">Play again</button>
+            <button onclick="bet()" class="bet_btn">Bet</button>
+            <button onclick="hit()" class="hit_btn">Hit</button>
+            <button onclick="stand()" class="stand_btn">Stand</button>
+        </div>
+
+    </div>
+
+    <script src="./scrypt.js" defer></script>
+</body>
+</html>

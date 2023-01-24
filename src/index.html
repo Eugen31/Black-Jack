@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+<body>
+
+
+<div class="start__page">
+
+    <div class="start__game" >
+        <h1>Black Jack 21</h1>
+
+        <!-- user new account -->
+        <form action="#">
+
+            <!-- name -->
+            <div class="user__name">
+                <label for="name">Type your name:</label><br><br>
+                <input name="name" id="name" type="text" placeholder="eg. John Doe"> 
+            </div><br>
+
+            <!-- difficulty -->
+            <div class="difficulty" onchange="checkName()">
+                <p>Please select your difficulty:</p><br>
+
+                <div class="hard">
+                    <input  type="radio" id="hard" name="difficulty" value=100>
+                    <label for="hard">HARD</label>
+                </div><br>
+    
+                <div class="medium">
+                    <input type="radio" id="medium" name="difficulty" value=500>
+                    <label for="medium">MEDIUM </label>
+                </div><br>
+                
+                <div class="easy">
+                    <input type="radio" id="easy" name="difficulty" value=1000>
+                    <label for="easy">EASY</label>
+                </div><br>
+    
+                <div class="random">
+                    <input type="radio" id="random" name="difficulty" value=0>
+                    <label for="random">RANDOM</label>
+                </div><br>
+
+                <div class="starting__money">
+                    <p>You will start game with $<span>0</span></p><br>
+                </div>
+    
+            </div>
+
+            <!-- start game -->
+            <button onclick="startGame()" class="start__btn" type="submit"> Start Game</button>
+
+        </form>
+    </div>
+</div>
+
+<!-- link js -->
+<script src="./scrypt.js" defer></script>
+</body>
+
+
+</html>
